@@ -1,12 +1,11 @@
 # eval_retriever.py
+from deepeval import evaluate
+from deepeval.metrics import ContextualPrecisionMetric, ContextualRecallMetric
+from deepeval.test_case import LLMTestCase
 from dotenv import load_dotenv
 
-from deepeval import evaluate
-from deepeval.test_case import LLMTestCase
-from deepeval.metrics import ContextualRecallMetric, ContextualPrecisionMetric
-
+from evals.harness import load_goldens, print_summary, summarize_by_metric
 from src.reranker import RerankingRetriever
-from evals.harness import load_goldens, summarize_by_metric, print_summary
 
 load_dotenv()
 
